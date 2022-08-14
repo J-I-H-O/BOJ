@@ -1,21 +1,20 @@
 #include <cstdio>
 
 int main() {
-  int n, x, found = 0;
-  int arr[100000];
+  int n, x, temp, found = 0;
+  //각 숫자의 등장 여부 저장
+  bool nums[2000001];
 
   scanf("%d", &n);
   for(int i = 0; i < n; i++) {
-    scanf("%d", &arr[i]);
+    scanf("%d", &temp);
+    nums[temp] = true;  //입력받은 숫자에 해당하는 index를 가진 요소를 true로 변경
   }
   scanf("%d", &x);
 
-  for(int i = 0; i < n - 1; i++) {
-    if(arr[i] > x) continue;
-    for(int j = i + 1; j < n; j++) {
-      if(arr[i] + arr[j] == x)
-        found++;
-    }
+  for(int i = 1; i < x/2; i++) {
+    if(nums[i] && nums[x - i])
+      found++;
   }
 
   printf("%d", found);
