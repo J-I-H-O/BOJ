@@ -12,7 +12,7 @@ int main() {
   }
   scanf("%d", &x);
 
-  for(int i = 1; i < x/2; i++) {
+  for(int i = 1; i < (x+1)/2; i++) {
     if(nums[i] && nums[x - i])
       found++;
   }
