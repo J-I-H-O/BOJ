@@ -14,7 +14,6 @@ int main() {
   for(auto c : str2) alphabetNum[c - 'a']--;
 
   for(int i = 0; i < 26; i++) {
-    if(alphabetNum[i] != 0)
       res += abs(alphabetNum[i]);
   }
 
